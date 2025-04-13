@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Phone",
+        "price": 499.99,
+        "quantity": 5
+    },
+    {
+        "id": "1",
+        "name": "laptop mp1",
+        "description": "",
+        "price": 2000,
+        "quantity": 5
+    },
+    {
+        "id": 3,
+        "name": "manish pc",
+        "description": "",
+        "price": 200000,
+        "quantity": 5
+    },
+    {
+        "id": 3,
+        "name": "pc",
+        "description": "",
+        "price": 200000,
+        "quantity": 5
+    },
+    {
+        "id": 4,
+        "name": "mac book",
+        "description": "",
+        "price": 499.99,
+        "quantity": 5
+    },
+    {
+        "id": 5,
+        "name": "android",
+        "description": "",
+        "price": 499.99,
+        "quantity": 5
+    },
+    {
+        "id": 6,
+        "name": "vip pro",
+        "description": "",
+        "price": 499555.99,
+        "quantity": 5
+    },
+    {
+        "id": 7,
+        "name": "vip pro",
+        "description": "",
+        "price": 499555.99,
+        "quantity": 5
+    }
+]
