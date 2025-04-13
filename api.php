@@ -4,26 +4,26 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT");
 header("Access-Control-Allow-Headers: Content-Type");
 
-// Get cleaned URI segments (fix for subfolders like localhost/product-api/)
+
 $basePath = explode('/', trim($_SERVER['SCRIPT_NAME'], '/'));
 $requestUri = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
 $uri = array_values(array_diff($requestUri, $basePath));
 $method = $_SERVER['REQUEST_METHOD'];
 $input = json_decode(file_get_contents('php://input'), true);
 
-// Load product list from file
+
 function loadProducts() {
     $file = 'data.json';
     if (!file_exists($file)) file_put_contents($file, json_encode([]));
     return json_decode(file_get_contents($file), true);
 }
 
-// Save product list to file
+
 function saveProducts($products) {
     file_put_contents('data.json', json_encode($products, JSON_PRETTY_PRINT));
 }
 
-// Input validation
+
 function validateProduct($data, $partial = false) {
     $errors = [];
 
@@ -47,7 +47,7 @@ function validateProduct($data, $partial = false) {
     return $errors;
 }
 
-// Routing logic
+
 if (isset($uri[0]) && $uri[0] === 'products') {
     // Create product
     if ($method === 'POST') {
@@ -77,7 +77,7 @@ if (isset($uri[0]) && $uri[0] === 'products') {
         exit;
 
     } elseif ($method === 'GET' && isset($uri[1])) {
-        // Get product by ID
+        
         $id = (int)$uri[1];
         $products = loadProducts();
         foreach ($products as $product) {
@@ -91,7 +91,7 @@ if (isset($uri[0]) && $uri[0] === 'products') {
         exit;
 
     } elseif ($method === 'PUT' && isset($uri[1])) {
-        // Update product by ID
+        
         $id = (int)$uri[1];
         $products = loadProducts();
         $updated = false;
